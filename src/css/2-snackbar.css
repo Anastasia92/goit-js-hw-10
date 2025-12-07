@@ -1,0 +1,135 @@
+main {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.form {
+  width: 360px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #2e2f42;
+}
+
+.delay-label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.delay-label input {
+  height: 40px;
+  margin-top: 8px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  outline: none;
+  padding-left: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.delay-label input:focus:placeholder-shown,
+.delay-label input:hover {
+  border-color: #000;
+}
+
+.delay-label input:focus:not(:placeholder-shown) {
+  border-color: #bd34fe;
+}
+
+.state-group {
+  margin-bottom: 24px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  padding: 10px 48px 12px 88px;
+  height: auto;
+  display: flex;
+  gap: 88px;
+}
+
+.state-group:hover,
+.state-group:focus {
+  border-color: #000;
+}
+
+.state-group legend {
+  margin-left: -64px;
+  padding: 4px;
+  letter-spacing: 0.04em;
+}
+
+.state-group label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.state-group label::before {
+  content: '';
+  position: absolute;
+  left: -34px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 1px solid #757575;
+  border-radius: 50%;
+  background-color: white;
+  transition: border-color 0.2s ease;
+}
+
+.state-group label:has(input:checked)::before {
+  border-color: #834ffc;
+}
+
+.state-group label:not(:has(input:checked)):hover::before {
+  border-color: #000;
+}
+
+.state-group label::after {
+  content: '';
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #834ffc;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.state-group label:has(input:checked)::after {
+  opacity: 1;
+}
+
+.form button[type='submit'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  color: #fff;
+  background-color: #bd34fe;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.form button[type='submit']:hover,
+.form button[type='submit']:focus {
+  background-color: #834ffc;
+}
